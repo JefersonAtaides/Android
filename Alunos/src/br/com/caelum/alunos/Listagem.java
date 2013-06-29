@@ -3,8 +3,13 @@ package br.com.caelum.alunos;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class Listagem extends Activity {
 	private ListView listaAlunos;
@@ -29,6 +34,22 @@ public class Listagem extends Activity {
         /* Configurar View para utilizar Adapter acima */
         listaAlunos = (ListView) findViewById(R.id.lista_alunos);
         listaAlunos.setAdapter(adapter);
+        
+        /* Toast */
+        listaAlunos.setOnItemClickListener(new OnItemClickListener(){
+        	@Override
+        	public void onItemClick(AdapterView<?> adapter, View view, int posicao, long id){
+        		Toast.makeText(Listagem.this, "Posição:" + posicao, Toast.LENGTH_SHORT).show();
+        	}
+        });
+        listaAlunos.setOnItemLongClickListener(new OnItemLongClickListener() {
+        		@Override
+        		public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+        				int arg2, long arg3) {
+
+        			return false;
+        		}
+		});
     }
 
     @Override
