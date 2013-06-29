@@ -1,0 +1,87 @@
+História
+  2003
+    - Start Up Android Inc
+    - Andy Rubin > Sundar Pichai (ChromeOS leader)
+
+  2005
+    - Google comprou Android Inc
+
+  2006
+    - Divulgou a plataforma em faculdades
+
+  2007
+    - Open Handset Alliance (OHA)
+    - Anunciou a plataforma Android
+    - Lançar iPhone
+
+  2008
+    - G1 -> HTC(1.5) Cupcake
+    - Android vira Open Source
+
+  2010
+    - iPad
+
+  2011
+    - Tablet Android (3.0) Honeycomb
+    - Xoom
+
+Bytecode
+  Default = .class
+  Android = .dex (Dalvik Executable)
+
+Java Archive
+  Default = .jar
+  Android = .apk
+
+Virtual Machine
+  JVM
+  Dalvik
+
+Simulador VS Emulador
+  Simular -> simula inclusive o hardware
+  Emulador -> utiliza o hardware da máquina local
+
+AVD - Android Virtual Device
+ADT - Android Development Tools
+SDT - Software Development Toolkit
+
+Bundle {
+  - zip (aprox 1gb)
+  - Eclipse
+  - SDK
+  - AVD
+}
+
+Versões (com nomes de doces)
+	Name		Version		API Level
+	-		1.0		1
+	-		1.1		2
+	Cupcake		1.5		3
+	Donut		1.6		4
+	Eclare		2.X		5/6/7
+	Froyo		2.2.X		8
+	Gingerbread	2.3.X		9/10
+	Honeycomb	3.X		11/12/13
+	Ice Cream Sand.	4.0.X		14/15
+	Jelly Beans	4.1/4.2		16/17
+
+
+Projeto Android - HelloWorld
+  src/
+  bin/
+  gen/
+  res/ (assets)
+    drawble/
+    layout/
+    values/
+    menu/
+  libs/
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Links
+  Google I/O
+    - Android Studio
+  Google Developers Group (GDG) - Android Meetup's
+    - tinyurl.com/Ka4try5
+  Lista de discussão - Android Developers Brasil
+  developer.android.com
