@@ -96,6 +96,36 @@ drawable
 Widget = aplicativo que roda dentro da Home
 android.view.View é pai das Views e ViewGroup(filha de View tb)
 
+Aplicativo é orientado a eventos
+  onCreate
+  onStart
+  onResume
+  onPause
+  onStop
+  onDestroy
+
+Layouts
+  Linear Layout
+  Relative Layout
+  Table Layout
+  Grid View
+  Tab Layout
+  List View
+
+  * android:layout_gravity="left|bottom" *
+  * android:layout_weight=1 * layout_height="0dp" *
+
+LINT
+  Monitorador de XMLs
+  - id duplicado
+  - layout duplicado
+  - layout não usado
+  - texto não externalizado no arquivo strings.xml
+  - tamanhos não externalizados no arquivo de diemens.xml
+  - apis de versões superiores usadas em versões inferiores
+  - etc
+  Window -> Run Android Lint
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Links / Tips
   Android é muito Fragmentado (versão X dispositivo)
