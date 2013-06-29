@@ -77,11 +77,29 @@ Projeto Android - HelloWorld
     menu/
   libs/
 
+O que começar com @ se refere a um Recurso
+Caso veja algum no fonte, segura Ctrl e passe o Mouse
+
+Simulador do Android
+	Window > Android Device Manager
+	Run > Run Configurations
+	* Aperte CTRL+F11 para girar a tela *
+
+drawable
+  ldpi
+  mpdi
+  hdpi
+  xhpdi
+  xxhdpi <-- Android começa buscar por aqui
+
+
+Widget = aplicativo que roda dentro da Home
+android.view.View é pai das Views e ViewGroup(filha de View tb)
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Links
-  Google I/O
-    - Android Studio
-  Google Developers Group (GDG) - Android Meetup's
-    - tinyurl.com/Ka4try5
+Links / Tips
+  Android é muito Fragmentado (versão X dispositivo)
+  Google I/O - Android Studio
+  Google Developers Group (GDG) - Android Meetup's - tinyurl.com/Ka4try5
   Lista de discussão - Android Developers Brasil
   developer.android.com
