@@ -1,8 +1,10 @@
 package br.com.caelum.alunos;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -57,6 +59,20 @@ public class Listagem extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_principal, menu);
         return true;
+    }
+    
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+    	switch (item.getItemId()){
+    	case R.id.menu_novo:
+    		Intent intent = new Intent(Listagem.this,
+    				FormularioActivity.class);
+    		
+    		startActivity(intent);
+    		return false;
+    	default:
+    		return super.onOptionsItemSelected(item);
+    	}
     }
     
 }
