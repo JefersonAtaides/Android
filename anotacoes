@@ -112,8 +112,13 @@ Layouts
   Tab Layout
   List View
 
-  * android:layout_gravity="left|bottom" *
+  * android:layout_gravity="center" *
+  * android:gravity="top|left" *
   * android:layout_weight=1 * layout_height="0dp" *
+
+Listener
+  - no controller
+  - ou na view
 
 LINT
   Monitorador de XMLs
@@ -126,6 +131,24 @@ LINT
   - etc
   Window -> Run Android Lint
 
+
+Alterar componentes sem utilizar o XML
+- View de Properties
+- Window > Show View > Other > General > Properties
+
+Menu
+@+id/menu_<nome>
+showAsAction
+
+Inflater > xml2java
+onOIS [press Ctrl + espaço]
+
+Classe Intent
+ao invés de gerenciar o ciclo de vida manualmente
+
+onSavedInstance(Bundle bundle)
+Bundle = chave/valor
+
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Links / Tips
   Android é muito Fragmentado (versão X dispositivo)
@@ -133,3 +156,22 @@ Links / Tips
   Google Developers Group (GDG) - Android Meetup's - tinyurl.com/Ka4try5
   Lista de discussão - Android Developers Brasil
   developer.android.com
+  github.com/caelum/onibus_android
+  github.com/andrelrs
+  Google Plus > Android Developers
+  Ícones > goo.gl/npamz
+
+
+
+
+
+
+
+Dúvidas
+	- detectar jailbreak
+	- debug em tempo real
+	- app fica em memória durante ciclo de vida?
+		Fica. exceto quando a instância precisa ser gravada
+		por conta de liberar memória de uma aplicação em onStop()
+	- testes de segurança são feitos no Google Play? e Apple Store?
+	- rodar daemon Android - trocar imagem filesystem
