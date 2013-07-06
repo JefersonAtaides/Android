@@ -149,6 +149,19 @@ ao invés de gerenciar o ciclo de vida manualmente
 onSavedInstance(Bundle bundle)
 Bundle = chave/valor
 
+classe Context manipula a tela
+
+ORMs Android
+	ORM Lite p/ Android
+	GreenDAO
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Formas de armazenamento
+	SQLite
+	Shared Preferences (implementado em SQLite
+				compartilhado com outras apps)
+
+private staic final String[] = Cols {"id","nome",...}
+>> Tentar fazer com busca com NULL ou * (projection)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Links / Tips
   Android é muito Fragmentado (versão X dispositivo)
@@ -160,12 +173,20 @@ Links / Tips
   github.com/andrelrs
   Google Plus > Android Developers
   Ícones > goo.gl/npamz
+  Samsung knox
+  Gravar no SD
+  Google Mobile Background
+  Sencha
+  http://gist.github.com/andrelrs/5940911
 
 
 
+cycript
+acra
 
-
-
+http://androidconf.com.br/programacao
+Android e sua máquina virtual Dalvik
+Douglas Mesquita + Anderson Gomes
 
 Dúvidas
 	- detectar jailbreak
