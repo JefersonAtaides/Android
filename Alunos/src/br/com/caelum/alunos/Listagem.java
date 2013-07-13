@@ -118,9 +118,15 @@ public class Listagem extends Activity {
     		
     		return false;
     	case R.id.site:
-    		Intent intentSite = new Intent(Intent.ACTION_VIEW);
-    		intentSite.setData(Uri.parse("http://"+alunoSelecionado.getSite()));
-    		startActivity(intentSite);
+    		// Opcao 1 - Action View
+    		//Intent intentSite = new Intent(Intent.ACTION_VIEW);
+    		//intentSite.setData(Uri.parse("http://"+alunoSelecionado.getSite()));
+    		//startActivity(intentSite);
+    		
+    		// Opcao 2 - Web View
+    		Intent verSite = new Intent(Listagem.this, VerSite.class);
+    		verSite.putExtra("alunoSelecionado", alunoSelecionado);
+    		startActivity(verSite);
     		
     		return false;
     	case R.id.excluir:

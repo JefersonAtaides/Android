@@ -7,11 +7,13 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
+
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -22,6 +24,7 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,6 +35,10 @@
         <activity
             android:name="br.com.caelum.alunos.FormularioActivity"
             android:label="@string/title_activity_formulario" >
+        </activity>
+        <activity
+            android:name="br.com.caelum.alunos.VerSite"
+            android:label="@string/title_activity_ver_site" >
         </activity>
     </application>
 
