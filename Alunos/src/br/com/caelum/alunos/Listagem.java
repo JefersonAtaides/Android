@@ -117,6 +117,12 @@ public class Listagem extends Activity {
     		//}
     		
     		return false;
+    	case R.id.site:
+    		Intent intentSite = new Intent(Intent.ACTION_VIEW);
+    		intentSite.setData(Uri.parse("http://"+alunoSelecionado.getSite()));
+    		startActivity(intentSite);
+    		
+    		return false;
     	case R.id.excluir:
     		AlunoDAO dao = new AlunoDAO(Listagem.this);
     		dao.excluir(alunoSelecionado);
