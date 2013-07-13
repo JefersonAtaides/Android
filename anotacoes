@@ -147,6 +147,7 @@ Classe Intent
 ao invés de gerenciar o ciclo de vida manualmente
 ~> pode pendurar objetos nela durante a transição de Activities (.putExtra) [serialized]
 ~> Transição de Activity acontece em Máquinas Dalviks separadas
+~> startActivityForResult(camera, requestCode);
 
 onSavedInstance(Bundle bundle)
 Bundle = chave/valor
@@ -195,3 +196,12 @@ Dúvidas
 		por conta de liberar memória de uma aplicação em onStop()
 	- testes de segurança são feitos no Google Play? e Apple Store?
 	- rodar daemon Android - trocar imagem filesystem
+
+
+
+Não funcionou no simulador:
+	- SMS (Option 2)
+	- Mapa
+	- E-mail
+	- Share
+	- Camera

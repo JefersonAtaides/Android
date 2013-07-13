@@ -1,5 +1,7 @@
 package br.com.caelum.alunos;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -42,5 +44,16 @@ public class FormularioHelper {
 		nota.setProgress((int)aluno.getNota());
 		
 		this.aluno = aluno;
+	}
+	
+	public ImageView getBotaoImagem(){
+		return foto;
+	}
+	
+	public void carregaImagem(String localArquivoFoto){
+		Bitmap imagemFoto = BitmapFactory.decodeFile(localArquivoFoto);
+		Bitmap imagemFotoReduzida = Bitmap.createScaledBitmap(imagemFoto, 100, 100, true);
+		aluno.setFoto(localArquivoFoto);
+		foto.setImageBitmap(imagemFotoReduzida);
 	}
 }
