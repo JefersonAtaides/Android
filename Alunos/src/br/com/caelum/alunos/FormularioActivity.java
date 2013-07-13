@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-//import br.com.caelum.alunos.dao.AlunoDAO;
+import br.com.caelum.alunos.dao.AlunoDAO;
 import br.com.caelum.alunos.modelo.Aluno;
 
 public class FormularioActivity extends Activity {
@@ -34,12 +34,12 @@ public class FormularioActivity extends Activity {
         				, Toast.LENGTH_SHORT
         		).show();
         		
-        		/* Persistindo no SQLite 
+        		/* Persistindo no SQLite */
         		AlunoDAO dao = new AlunoDAO(FormularioActivity.this);
         		dao.insere(aluno);
-        		dao.close();*/
+        		dao.close();
         		
-        		//finish();
+        		finish();
         		
         	}
         });

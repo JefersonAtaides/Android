@@ -1,5 +1,7 @@
 package br.com.caelum.alunos;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,30 +14,36 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import br.com.caelum.alunos.dao.AlunoDAO;
+import br.com.caelum.alunos.modelo.Aluno;
 
 public class Listagem extends Activity {
 	private ListView listaAlunos;
+	
+	private void carregaLista(){
+        /* Lista de Alunos Dinâmica */
+        AlunoDAO dao = new AlunoDAO(this);
+        List<Aluno> alunos = dao.getLista();
+        dao.close();
+        
+        /* Adaptador de Array para View */
+        ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this,
+        		android.R.layout.simple_list_item_1,
+        		alunos
+        );
+        
+        listaAlunos.setAdapter(adapter);
+	}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listagem);
         
-        /* Lista de Alunos Estática */
-        String[] alunos = {"Anderson", "Felipe", "Guilherme"};
-        
-        /* Layout padrão do Android */
-        int layout = android.R.layout.simple_list_item_1;
-        
-        /* Adaptador de Array para View */
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-        		layout,
-        		alunos
-        );
         
         /* Configurar View para utilizar Adapter acima */
         listaAlunos = (ListView) findViewById(R.id.lista_alunos);
-        listaAlunos.setAdapter(adapter);
+        this.carregaLista();
         
         /* Toast */
         listaAlunos.setOnItemClickListener(new OnItemClickListener(){
@@ -53,6 +61,12 @@ public class Listagem extends Activity {
         		}
 		});
 
+    }
+    
+    @Override
+    protected void onResume() {
+    	super.onResume();
+    	this.carregaLista();
     }
 
     @Override

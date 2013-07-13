@@ -145,6 +145,7 @@ onOIS [press Ctrl + espaço]
 
 Classe Intent
 ao invés de gerenciar o ciclo de vida manualmente
+~> pode pendurar objetos nela durante a transição de Activities (.putExtra)
 
 onSavedInstance(Bundle bundle)
 Bundle = chave/valor
@@ -160,7 +161,7 @@ Formas de armazenamento
 	Shared Preferences (implementado em SQLite
 				compartilhado com outras apps)
 
-private staic final String[] = Cols {"id","nome",...}
+private static final String[] = Cols {"id","nome",...}
 >> Tentar fazer com busca com NULL ou * (projection)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Links / Tips
@@ -181,7 +182,6 @@ Links / Tips
 
 
 
-cycript
 acra
 
 http://androidconf.com.br/programacao
