@@ -13,9 +13,9 @@ public class VerSite extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ver_site);
 		
-		Aluno aluno = (Aluno) getIntent().getSerializableExtra("alunoSelecionado");
+		String URL = (String) getIntent().getSerializableExtra("URL");
 		WebView view = (WebView) findViewById(R.id.vwweb);
-		view.loadUrl("http://" + aluno.getSite());
+		view.loadUrl(URL);
 	}
 
 	@Override

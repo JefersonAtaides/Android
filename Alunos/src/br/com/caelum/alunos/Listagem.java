@@ -118,6 +118,14 @@ public class Listagem extends Activity {
     		
     		return false;
     	case R.id.site:
+    		String siteAluno = "";
+    		if(alunoSelecionado.getSite().startsWith("http://")){
+    			siteAluno = alunoSelecionado.getSite();
+    		} else {
+    			siteAluno = "http://" + alunoSelecionado.getSite();
+    		}
+    		
+    		
     		// Opcao 1 - Action View
     		//Intent intentSite = new Intent(Intent.ACTION_VIEW);
     		//intentSite.setData(Uri.parse("http://"+alunoSelecionado.getSite()));
@@ -125,8 +133,28 @@ public class Listagem extends Activity {
     		
     		// Opcao 2 - Web View
     		Intent verSite = new Intent(Listagem.this, VerSite.class);
-    		verSite.putExtra("alunoSelecionado", alunoSelecionado);
+    		verSite.putExtra("URL", siteAluno);
     		startActivity(verSite);
+    		
+    		return false;
+    	case R.id.mapa:
+    		Intent intentMapa = new Intent(Intent.ACTION_VIEW);
+    		intentMapa.setData(Uri.parse("geo:0,0?z=14&q="+alunoSelecionado.getEndereco()));
+    		startActivity(intentMapa);
+    		
+    		return false;
+    	case R.id.email:
+    		Intent intentEmail = new Intent(Intent.ACTION_SEND);
+    		/* Email */
+    		//intentEmail.setType("message/rfc822");
+    		//intentEmail.putExtra(Intent.EXTRA_EMAIL, new String[]{ "caelum@caelum.com.br" });
+    		
+    		/* Share */
+    		intentEmail.setType("text/plain");
+    		
+    		intentEmail.putExtra(Intent.EXTRA_SUBJECT, "Assunto do Email");
+    		intentEmail.putExtra(Intent.EXTRA_TEXT, "Lorem Ipsum.");
+    		startActivity(Intent.createChooser(intentEmail, "Escolha como preferir"));
     		
     		return false;
     	case R.id.excluir:
