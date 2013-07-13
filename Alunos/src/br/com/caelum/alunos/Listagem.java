@@ -54,7 +54,10 @@ public class Listagem extends Activity {
         listaAlunos.setOnItemClickListener(new OnItemClickListener(){
         	@Override
         	public void onItemClick(AdapterView<?> adapter, View view, int posicao, long id){
-        		Toast.makeText(Listagem.this, "Posição:" + posicao, Toast.LENGTH_SHORT).show();
+        		Intent edicao = new Intent(Listagem.this, FormularioActivity.class);
+        		edicao.putExtra("alunoSelecionado", (Aluno) listaAlunos.getItemAtPosition(posicao));
+        		startActivity(edicao);
+        		//Toast.makeText(Listagem.this, "Posição:" + posicao, Toast.LENGTH_SHORT).show();
         	}
         });
         listaAlunos.setOnItemLongClickListener(new OnItemLongClickListener() {

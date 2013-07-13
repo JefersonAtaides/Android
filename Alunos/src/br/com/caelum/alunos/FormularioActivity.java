@@ -6,6 +6,9 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.SeekBar;
 import android.widget.Toast;
 import br.com.caelum.alunos.dao.AlunoDAO;
 import br.com.caelum.alunos.modelo.Aluno;
@@ -18,27 +21,44 @@ public class FormularioActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.formulario);
 		
-		
-        /* Listener do Botao */
         helper = new FormularioHelper(this);
         Button botao = (Button) findViewById(R.id.botao);
+        
+		/* Aluno que vem da Intent */
+		Aluno aluno = (Aluno) getIntent().getSerializableExtra("alunoSelecionado");
+		if(aluno == null){
+			aluno = new Aluno();
+		} else {
+			helper.colocaNoFormulario(aluno);
+			botao.setText("Alterar");
+		}
+        
+		/* Listener do Botao */
         botao.setOnClickListener(new OnClickListener(){
         	@Override
         	public void onClick(View v){
         		Aluno aluno = helper.pegaAlunoDoFormulario();
         		
-        		/* Antigo Toast */
-        		Toast.makeText(
-        				FormularioActivity.this
-        				, "Objeto aluno criado: "+aluno.getNome()
-        				, Toast.LENGTH_SHORT
-        		).show();
-        		
         		/* Persistindo no SQLite */
-        		AlunoDAO dao = new AlunoDAO(FormularioActivity.this);
-        		dao.insere(aluno);
+    			AlunoDAO dao = new AlunoDAO(FormularioActivity.this);
+        		if(aluno.getId() == null){
+            		Toast.makeText(
+            				FormularioActivity.this
+            				, "Objeto aluno criado: "+aluno.getNome()
+            				, Toast.LENGTH_SHORT
+            		).show();
+            		
+        			dao.insere(aluno);
+        		} else {
+            		Toast.makeText(
+            				FormularioActivity.this
+            				, "Objeto aluno alterado: "+aluno.getNome()
+            				, Toast.LENGTH_SHORT
+            		).show();
+            		
+        			dao.alterar(aluno);
+        		}
         		dao.close();
-        		
         		finish();
         		
         	}
