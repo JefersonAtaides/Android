@@ -5,6 +5,8 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +21,7 @@ import br.com.caelum.alunos.modelo.Aluno;
 
 public class Listagem extends Activity {
 	private ListView listaAlunos;
+	private Aluno alunoSelecionado;
 	
 	private void carregaLista(){
         /* Lista de Alunos Dinâmica */
@@ -40,10 +43,12 @@ public class Listagem extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listagem);
         
-        
         /* Configurar View para utilizar Adapter acima */
         listaAlunos = (ListView) findViewById(R.id.lista_alunos);
         this.carregaLista();
+        
+        /* Registrando para Menu de Contexto */
+        registerForContextMenu(listaAlunos);
         
         /* Toast */
         listaAlunos.setOnItemClickListener(new OnItemClickListener(){
@@ -54,9 +59,10 @@ public class Listagem extends Activity {
         });
         listaAlunos.setOnItemLongClickListener(new OnItemLongClickListener() {
         		@Override
-        		public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
-        				int arg2, long arg3) {
+        		public boolean onItemLongClick(AdapterView<?> adapter, View view,
+        				int posicao, long id) {
 
+            		alunoSelecionado = (Aluno) adapter.getItemAtPosition(posicao);
         			return false;
         		}
 		});
@@ -68,7 +74,31 @@ public class Listagem extends Activity {
     	super.onResume();
     	this.carregaLista();
     }
-
+    
+    // Menu de Contexto
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo) {
+    	// Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_contexto, menu);
+    }
+    
+    @Override
+    public boolean onContextItemSelected(MenuItem item){
+    	switch (item.getItemId()){
+    	case R.id.excluir:
+    		AlunoDAO dao = new AlunoDAO(Listagem.this);
+    		dao.excluir(alunoSelecionado);
+    		dao.close();
+    		this.carregaLista();
+    		Toast.makeText(Listagem.this, "Aluno excluído", Toast.LENGTH_SHORT).show();
+    		
+    		return false;
+    	default:
+    		return super.onOptionsItemSelected(item);
+    	}
+    }
+    
+    // Menu Principal
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

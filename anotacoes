@@ -145,7 +145,8 @@ onOIS [press Ctrl + espaço]
 
 Classe Intent
 ao invés de gerenciar o ciclo de vida manualmente
-~> pode pendurar objetos nela durante a transição de Activities (.putExtra)
+~> pode pendurar objetos nela durante a transição de Activities (.putExtra) [serialized]
+~> Transição de Activity acontece em Máquinas Dalviks separadas
 
 onSavedInstance(Bundle bundle)
 Bundle = chave/valor

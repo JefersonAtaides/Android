@@ -21,6 +21,11 @@ public class AlunoDAO extends SQLiteOpenHelper {
 		super(context, DATABASE, null, VERSAO);
 	}
 	
+	public void excluir(Aluno aluno){
+		String[] args = { aluno.getId().toString() };
+		getWritableDatabase().delete(TABELA, "id=?", args);
+	}
+	
 	public List<Aluno> getLista(){
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
