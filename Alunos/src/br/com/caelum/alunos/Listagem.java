@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -88,6 +89,12 @@ public class Listagem extends Activity {
     @Override
     public boolean onContextItemSelected(MenuItem item){
     	switch (item.getItemId()){
+    	case R.id.ligar:
+    		Intent intent = new Intent(Intent.ACTION_CALL);
+    		intent.setData(Uri.parse("tel:"+alunoSelecionado.getTelefone()));
+    		startActivity(intent);
+    		
+    		return false;
     	case R.id.excluir:
     		AlunoDAO dao = new AlunoDAO(Listagem.this);
     		dao.excluir(alunoSelecionado);
