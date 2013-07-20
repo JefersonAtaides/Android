@@ -158,6 +158,11 @@ ORMs Android
 	ORM Lite p/ Android
 	GreenDAO
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+SMS pelo Emulador
+	> CTRL 3 + Emulator
+	> telnet localhost 5554
+	> # sms send <PhoneNumber> <Message>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Formas de armazenamento
 	SQLite
 	Shared Preferences (implementado em SQLite
@@ -183,7 +188,7 @@ Links / Tips
   http://gist.github.com/andrelrs/5940911
   Android Acra
   http://www.cyanogenmod.org/about
-
+  http://pro.jsonlint.com/
 http://androidconf.com.br/programacao
 Android e sua máquina virtual Dalvik
 Douglas Mesquita + Anderson Gomes
@@ -196,12 +201,3 @@ Dúvidas
 		por conta de liberar memória de uma aplicação em onStop()
 	- testes de segurança são feitos no Google Play? e Apple Store?
 	- rodar daemon Android - trocar imagem filesystem
-
-
-
-Não funcionou no simulador:
-	- SMS (Option 2)
-	- Mapa
-	- E-mail
-	- Share
-	- Camera
