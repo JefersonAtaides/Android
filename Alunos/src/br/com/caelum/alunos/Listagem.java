@@ -3,12 +3,9 @@ package br.com.caelum.alunos;
 import java.util.List;
 
 import android.app.Activity;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.telephony.PhoneNumberUtils;
-import android.telephony.SmsManager;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
@@ -20,6 +17,7 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import br.com.caelum.alunos.adapter.ListaAlunosAdapter;
 import br.com.caelum.alunos.dao.AlunoDAO;
 import br.com.caelum.alunos.modelo.Aluno;
 
@@ -33,11 +31,15 @@ public class Listagem extends Activity {
         List<Aluno> alunos = dao.getLista();
         dao.close();
         
-        /* Adaptador de Array para View */
+        /* Adaptador de Array para View x
         ArrayAdapter<Aluno> adapter = new ArrayAdapter<Aluno>(this,
         		android.R.layout.simple_list_item_1,
         		alunos
-        );
+        ); */
+
+        ListaAlunosAdapter adapter = new ListaAlunosAdapter(
+        		this,
+        		alunos);
         
         listaAlunos.setAdapter(adapter);
 	}
