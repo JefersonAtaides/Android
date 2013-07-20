@@ -14,10 +14,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import br.com.caelum.alunos.adapter.ListaAlunosAdapter;
+import br.com.caelum.alunos.async.UploadContactsToServer;
 import br.com.caelum.alunos.dao.AlunoDAO;
 import br.com.caelum.alunos.modelo.Aluno;
 
@@ -189,6 +189,14 @@ public class Listagem extends Activity {
     		
     		startActivity(intent);
     		return false;
+    	case R.id.menu_mapa:
+    		return false;
+    	case R.id.menu_enviar_alunos:
+    		// New Task on background
+			new UploadContactsToServer(this).execute();
+    		return false;
+    	case R.id.menu_receber_provas:
+    	case R.id.menu_preferencias:
     	default:
     		return super.onOptionsItemSelected(item);
     	}

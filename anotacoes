@@ -163,6 +163,12 @@ SMS pelo Emulador
 	> telnet localhost 5554
 	> # sms send <PhoneNumber> <Message>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ASYNC
+	- Handler
+	- Thread
+	- AsyncTask
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Formas de armazenamento
 	SQLite
 	Shared Preferences (implementado em SQLite

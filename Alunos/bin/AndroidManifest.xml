@@ -42,7 +42,7 @@
             android:label="@string/title_activity_ver_site" >
         </activity>
         
-        <receiver android:name=".SMSReceiver" android:enabled="true">
+        <receiver android:name="br.com.caelum.alunos.receiver.SMSReceiver" android:enabled="true">
             <intent-filter >
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
