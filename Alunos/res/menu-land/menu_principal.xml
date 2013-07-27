@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/menu_novo" android:showAsAction="always" android:icon="@drawable/ic_novo" android:title="Novo"></item>
+    <item android:id="@+id/menu_mapa" android:showAsAction="always" android:icon="@drawable/ic_mapa" android:title="Mapa"></item>
+    
+    <item android:icon="@drawable/ic_opcoes"
+        android:showAsAction="always"
+        android:title="Mais opções">
+        
+        <item android:id="@+id/menu_enviar_alunos" android:showAsAction="always" android:icon="@drawable/ic_enviar" android:title="Sincronizar"></item>
+		<item android:id="@+id/menu_receber_provas" android:showAsAction="always" android:icon="@drawable/ic_receber" android:title="Baixar Provas"></item>
+		<item android:id="@+id/menu_preferencias" android:showAsAction="always" android:icon="@drawable/ic_preferencias" android:title="Preferências"></item>
+        
+    </item>
+</menu>

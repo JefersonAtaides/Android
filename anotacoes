@@ -177,6 +177,8 @@ Formas de armazenamento
 private static final String[] = Cols {"id","nome",...}
 >> Tentar fazer com busca com NULL ou * (projection)
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Fragments > Frames
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Links / Tips
   Android é muito Fragmentado (versão X dispositivo)
   Google I/O - Android Studio

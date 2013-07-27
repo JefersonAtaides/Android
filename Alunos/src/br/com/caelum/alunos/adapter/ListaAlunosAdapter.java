@@ -61,8 +61,8 @@ public class ListaAlunosAdapter extends BaseAdapter {
 		
 		// Pegar Site
 		TextView site = (TextView) view.findViewById(R.id.site);
-		if(telefone != null){
-			telefone.setText(aluno.getSite());
+		if(site != null){
+			site.setText(aluno.getSite());
 		}
 		
 		Bitmap bm;
