@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.webkit.WebView;
-import br.com.caelum.alunos.modelo.Aluno;
 
 public class VerSite extends Activity {
 

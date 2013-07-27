@@ -1,5 +1,6 @@
 package br.com.caelum.alunos;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
@@ -9,9 +10,19 @@ import br.com.caelum.fragment.DetalhesProvaFragment;
 import br.com.caelum.fragment.ListaProvasFragment;
 
 public class ProvasActivity extends FragmentActivity {
+	public boolean isLandscape(){
+		Integer orientation = getResources().getConfiguration().orientation;
+		
+		if(orientation == Configuration.ORIENTATION_LANDSCAPE){
+			return true;
+		}
+		
+		return false;
+	}
 	
 	public boolean isTablet(){
-		return getResources().getBoolean(R.bool.isTablet);
+		return true;
+		//return getResources().getBoolean(R.bool.isTablet);
 	}
 
 	@Override
@@ -22,7 +33,7 @@ public class ProvasActivity extends FragmentActivity {
 		if(savedInstanceState == null){
 			FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 			
-			if(isTablet()){
+			if(isTablet() && isLandscape()){
 				transaction
 					.replace(R.id.provas_lista, new ListaProvasFragment(),
 							ListaProvasFragment.class.getCanonicalName())
@@ -30,7 +41,7 @@ public class ProvasActivity extends FragmentActivity {
 							DetalhesProvaFragment.class.getCanonicalName());
 			} else {
 				transaction
-					.replace(R.id.provas_view, new ListaProvasFragment(),
+					.replace(R.id.provas_lista, new ListaProvasFragment(),
 							ListaProvasFragment.class.getCanonicalName());
 			}
 			
@@ -48,14 +59,19 @@ public class ProvasActivity extends FragmentActivity {
 		FragmentTransaction transaction = 
 				getSupportFragmentManager().beginTransaction();
 		
-		transaction.replace(R.id.provas_detalhe, detalhesProva, 
-				DetalhesProvaFragment.class.getCanonicalName());
-		
-		transaction.addToBackStack(null);
+
+		if(isTablet() && isLandscape()){
+			transaction.replace(R.id.provas_detalhe, detalhesProva, 
+					DetalhesProvaFragment.class.getCanonicalName());
+		} else {
+			transaction.replace(R.id.provas_lista, detalhesProva, 
+					DetalhesProvaFragment.class.getCanonicalName());
+			
+			transaction.addToBackStack(null);
+		}
 		
 		transaction.commit();
-		
-		
+
 	}
 
 	@Override

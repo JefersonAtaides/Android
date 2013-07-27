@@ -9,5 +9,6 @@
     <string name="title_activity_ver_site">VerSite</string>
     <string name="title_activity_provas">ProvasActivity</string>
     <string name="title_activity_detalhes_prova_fragment">DetalhesProvaFragment</string>
+    <string name="title_activity_mostra_alunos_proximos">MostraAlunosProximosActivity</string>
 
 </resources>

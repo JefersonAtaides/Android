@@ -190,6 +190,8 @@ public class Listagem extends Activity {
     		startActivity(intent);
     		return false;
     	case R.id.menu_mapa:
+    		Intent mapa = new Intent(this, MostraAlunosProximosActivity.class);
+    		startActivity(mapa);
     		return false;
     	case R.id.menu_enviar_alunos:
     		// New Task on background

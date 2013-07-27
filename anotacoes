@@ -179,6 +179,20 @@ private static final String[] = Cols {"id","nome",...}
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Fragments > Frames
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Mapa
+
+keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+https://code.google.com/apis/console
+
+~ Ver atributo package no Android.manifest
+~ Configurar permissões e metadata
+~ Android SDK Manager > Google Play services
+(...)/android/sdk/extras/google/google_play_services/libproject/google-play-services_lib
+- Root/<botao direito>/properties
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 Links / Tips
   Android é muito Fragmentado (versão X dispositivo)
   Google I/O - Android Studio
