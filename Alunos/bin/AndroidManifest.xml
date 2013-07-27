@@ -54,6 +54,10 @@
             android:name="br.com.caelum.alunos.ProvasActivity"
             android:label="@string/title_activity_provas" >
         </activity>
+        <activity
+            android:name="br.com.caelum.alunos.DetalhesProvaFragment"
+            android:label="@string/title_activity_detalhes_prova_fragment" >
+        </activity>
     </application>
 
 </manifest>
