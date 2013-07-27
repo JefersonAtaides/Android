@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
+import br.com.caelum.alunos.fragment.DetalhesProvaFragment;
+import br.com.caelum.alunos.fragment.ListaProvasFragment;
 import br.com.caelum.alunos.modelo.Prova;
-import br.com.caelum.fragment.DetalhesProvaFragment;
-import br.com.caelum.fragment.ListaProvasFragment;
 
 public class ProvasActivity extends FragmentActivity {
 	public boolean isLandscape(){

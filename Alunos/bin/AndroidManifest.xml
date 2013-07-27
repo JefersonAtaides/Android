@@ -14,8 +14,7 @@
 
     <users-permission android:name="android.permission.INTERNET" />
     <users-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <users-permission android:name="android.permission.READ_GSERVICES" />
-+
+    <users-permission android:name="com.google.android.providers.gsf.permissions.READ_GSERVICES" />
     <users-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <users-permission android:name="android.permission.ACESSS_FINE_LOCATION" />
 
