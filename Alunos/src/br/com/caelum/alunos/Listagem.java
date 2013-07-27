@@ -196,6 +196,9 @@ public class Listagem extends Activity {
 			new UploadContactsToServer(this).execute();
     		return false;
     	case R.id.menu_receber_provas:
+    		Intent provas = new Intent(this, ProvasActivity.class);
+    		startActivity(provas);
+    		return false;
     	case R.id.menu_preferencias:
     	default:
     		return super.onOptionsItemSelected(item);

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.telephony.SmsMessage;
 import android.widget.Toast;
 import br.com.caelum.alunos.R;
-import br.com.caelum.alunos.R.raw;
 import br.com.caelum.alunos.dao.AlunoDAO;
 
 public class SMSReceiver extends BroadcastReceiver {

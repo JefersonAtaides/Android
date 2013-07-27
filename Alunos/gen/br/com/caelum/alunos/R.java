@@ -16,35 +16,37 @@ public final class R {
         public static final int linha_par=0x7f050001;
     }
     public static final class drawable {
-        public static final int ic_enviar=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int ic_mapa=0x7f020002;
-        public static final int ic_no_image=0x7f020003;
-        public static final int ic_novo=0x7f020004;
-        public static final int ic_opcoes=0x7f020005;
-        public static final int ic_preferencias=0x7f020006;
-        public static final int ic_receber=0x7f020007;
+        public static final int borda=0x7f020000;
+        public static final int ic_enviar=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int ic_mapa=0x7f020003;
+        public static final int ic_no_image=0x7f020004;
+        public static final int ic_novo=0x7f020005;
+        public static final int ic_opcoes=0x7f020006;
+        public static final int ic_preferencias=0x7f020007;
+        public static final int ic_receber=0x7f020008;
     }
     public static final class id {
         public static final int botao=0x7f09000e;
-        public static final int email=0x7f090014;
+        public static final int email=0x7f090015;
         public static final int endereco=0x7f090009;
-        public static final int excluir=0x7f090013;
+        public static final int excluir=0x7f090014;
         public static final int foto=0x7f090003;
-        public static final int ligar=0x7f090010;
+        public static final int ligar=0x7f090011;
         public static final int lista_alunos=0x7f090000;
-        public static final int mapa=0x7f090012;
-        public static final int menu_enviar_alunos=0x7f090017;
-        public static final int menu_mapa=0x7f090016;
-        public static final int menu_novo=0x7f090015;
-        public static final int menu_preferencias=0x7f090019;
-        public static final int menu_receber_provas=0x7f090018;
-        public static final int menu_settings=0x7f09000f;
+        public static final int mapa=0x7f090013;
+        public static final int menu_enviar_alunos=0x7f090018;
+        public static final int menu_mapa=0x7f090017;
+        public static final int menu_novo=0x7f090016;
+        public static final int menu_preferencias=0x7f09001a;
+        public static final int menu_receber_provas=0x7f090019;
+        public static final int menu_settings=0x7f090010;
         public static final int nome=0x7f090005;
         public static final int nota=0x7f09000d;
+        public static final int provas_view=0x7f09000f;
         public static final int scrollView1=0x7f090002;
         public static final int site=0x7f09000b;
-        public static final int sms=0x7f090011;
+        public static final int sms=0x7f090012;
         public static final int telefone=0x7f090007;
         public static final int textView1=0x7f090004;
         public static final int textView2=0x7f090006;
@@ -53,20 +55,26 @@ public final class R {
         public static final int textView5=0x7f09000c;
         public static final int vwweb=0x7f090001;
     }
+    public static final class id_provas_lista {
+        public static final int list_view=0x7f0a0000;
+    }
     public static final class layout {
         public static final int activity_cadastro=0x7f030000;
         public static final int activity_listagem=0x7f030001;
         public static final int activity_ver_site=0x7f030002;
         public static final int formulario=0x7f030003;
         public static final int item=0x7f030004;
+        public static final int prova_lista=0x7f030005;
+        public static final int provas=0x7f030006;
     }
     public static final class menu {
         public static final int activity_cadastro=0x7f080000;
         public static final int activity_listagem=0x7f080001;
-        public static final int activity_ver_site=0x7f080002;
-        public static final int formulario=0x7f080003;
-        public static final int menu_contexto=0x7f080004;
-        public static final int menu_principal=0x7f080005;
+        public static final int activity_provas=0x7f080002;
+        public static final int activity_ver_site=0x7f080003;
+        public static final int formulario=0x7f080004;
+        public static final int menu_contexto=0x7f080005;
+        public static final int menu_principal=0x7f080006;
     }
     public static final class raw {
         public static final int sms=0x7f040000;
@@ -77,6 +85,7 @@ public final class R {
         public static final int menu_settings=0x7f060002;
         public static final int title_activity_cadastro=0x7f060003;
         public static final int title_activity_formulario=0x7f060004;
+        public static final int title_activity_provas=0x7f060006;
         public static final int title_activity_ver_site=0x7f060005;
     }
     public static final class style {
